@@ -13,7 +13,7 @@ Also to Prevent exposure to a virus in the workplace
 When a call or a meeting ended the Endpoint push an Alert Message "Please Leave the Room. The Air is Renewing. 15min required before using the room again".
 
 The endpoint also blocks its use during 15 minutes.
-![Image description](https://i.ibb.co/42g1K0N/20200520-161628.jpg)
+![Image description](https://i.ibb.co/HYBPy9C/20200520-152047-007-01.jpg)
 
 At the end of this period an alert sound is triggered and the Endpoint is usable again.
 
