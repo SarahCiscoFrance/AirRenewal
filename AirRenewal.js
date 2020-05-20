@@ -4,9 +4,11 @@ Version: v1.0
 */
 
 const xapi = require('xapi');
+xapi.config.set("RoomAnalytics PeopleCountOutOfCall", "On");
 var alertDuration = 2; //in minutes
 var copyDuration = alertDuration;
 var refreshIntervalId;
+var callEnded = false;
 
 function displayTextOnScreen(text) {
   xapi.command('UserInterface Message Alert Display', {
@@ -51,8 +53,20 @@ function unlockDevice(){
 
 xapi.event.on("CallDisconnect", (event) => {
         if (event.Duration > 0) {
+          console.log('call ended');
+          callEnded = true;
           alertDuration = copyDuration;
-          postStatusCall();
         }
 });
 
+
+xapi.status.on('RoomAnalytics PeopleCount Current', (numberofpeople) => {
+    console.log(numberofpeople);
+    if(numberofpeople<=0){
+      if(callEnded){
+        console.log('TRIGGERED');
+        postStatusCall();
+        callEnded = false;
+      }
+    }
+});
