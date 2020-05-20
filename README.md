@@ -29,5 +29,5 @@ git clone https://github.com/SarahCiscoFrance/AirRenewal.git
 Open a web browser pointing to the IP address of your room device, and sign in to the web interface (you will need a user account with 'administrator' role), and navigate to Integration > Macro Editor
 ![Image description](https://i.ibb.co/FYZR4HR/Capture-d-e-cran-2020-05-20-a-17-56-17.png)
 
-Then import AirRenewal.js activate it and save.
+            Then import AirRenewal.js activate it and save.
 ![Image description](https://i.ibb.co/fNDRPZ8/Capture-d-e-cran-2020-05-20-a-17-57-20.png)
