@@ -10,7 +10,7 @@ This service was built in order to showcases the API integrated in the Cisco end
 Also to Prevent exposure to a virus in the workplace
 
 ### How it works ?
-When a call or a meeting ended and the user leaves the room, the Endpoint push an Alert Message "Please Leave the Room. The Air is Renewing. 15min required before using the room again".
+When a call or a meeting ended and the user leaves the room, the endpoint automatically display an alert message "Please Leave the Room. The Air is Renewing. 15min required before using the room again".
 
 The endpoint also blocks its use during 15 minutes.
 ![Image description](https://i.ibb.co/HYBPy9C/20200520-152047-007-01.jpg)
