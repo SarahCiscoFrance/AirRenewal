@@ -1,5 +1,5 @@
 # AirRenewal
-
+![Image description](https://i.ibb.co/59pq88G/Capture-d-e-cran-2020-05-20-a-17-29-32.png)
 
 ### What is it ?
 AirRenewal is a macro in JavaScript for Webex Endpoint, used to force a pause between 2 calls to let the room renew the air
@@ -17,7 +17,7 @@ The endpoint also blocks its use during 15 minutes.
 At the end of this period an alert sound is triggered and the Endpoint is usable again.
 
 
-### Clone project and install dependencies
+### Clone project
 
 ``` bash
 # clone the project
