@@ -1,6 +1,6 @@
 /*
 Author: rudferna@cisco.com
-Version: v1.0
+Version: v1.1
 */
 
 const xapi = require('xapi');
