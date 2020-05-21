@@ -6,6 +6,7 @@ Version: v1.0
 const xapi = require('xapi');
 const OPTION = 2 // 1: DIGITAL SIGNAGE OR 2: ALERT MESSAGE
 xapi.config.set("RoomAnalytics PeopleCountOutOfCall", "On");
+xapi.config.set("Standby Signage Mode", "On");
 var alertDuration = 2; //in minutes
 var copyDuration = alertDuration;
 var refreshIntervalId;
@@ -61,6 +62,7 @@ function updateEveryMinutes() {
     else{
       xapi.command('Standby Deactivate');
       xapi.config.set("Standby Signage Url", "");
+      xapi.config.set("Standby Signage Mode", "Off");
     }
     xapi.command(' Audio SoundsAndAlerts Ringtone Play', {
       RingTone: 'Ringer',
