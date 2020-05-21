@@ -1,15 +1,17 @@
 /*
 Author: rudferna@cisco.com
-Version: v1.1
+Version: v1.0
 */
 
 const xapi = require('xapi');
+const OPTION = 2 // 1: DIGITAL SIGNAGE OR 2: ALERT MESSAGE
 xapi.config.set("RoomAnalytics PeopleCountOutOfCall", "On");
 var alertDuration = 2; //in minutes
 var copyDuration = alertDuration;
 var refreshIntervalId;
 var callEnded = false;
 
+/*OPTION 1 FUNCTIONS: ALERT MESSAGE*/
 function displayTextOnScreen(text) {
   xapi.command('UserInterface Message Alert Display', {
   Title: 'Please Leave the Room. The Air is Renewing',
@@ -26,15 +28,40 @@ function postStatusCall() {
        
 }
 
+/*END OPTION 1 */
+
+/*OPTION 2 FUNCTIONS : DIGITAL SIGNAGE*/
+function displayLockScreen(){
+  lockDevice();
+  refreshIntervalId = setInterval(updateEveryMinutes, 60*1000);
+  xapi.config.set("Standby Signage Url", "http://websrv2.ciscofrance.com:15198/airRenewal/?dc=" + alertDuration);
+  xapi.command('Standby Halfwake'); 
+}
+/*END OPTION 2*/
+
+
+/* FUNCTION USED BY THE 2 OPTIONS*/
 function updateEveryMinutes() {
   alertDuration = alertDuration - 1;
   if(alertDuration !== 0){
-    displayTextOnScreen('Waiting time: ' + alertDuration + ' minutes');
-    xapi.config.set('UserInterface CustomMessage', 'Waiting time: ' + alertDuration + ' minutes');
+    if(OPTION === 2){
+      displayTextOnScreen('Waiting time: ' + alertDuration + ' minutes');
+      xapi.config.set('UserInterface CustomMessage', 'Waiting time: ' + alertDuration + ' minutes');
+    }
+    else{
+      xapi.config.set("Standby Signage Url", "http://websrv2.ciscofrance.com:15198/airRenewal/?dc=" + alertDuration);
+      xapi.command('Standby Halfwake'); 
+    }
   }
   else{
     unlockDevice();
-    xapi.config.set('UserInterface CustomMessage', '');
+    if(OPTION === 2){
+      xapi.config.set('UserInterface CustomMessage', '');
+    }
+    else{
+      xapi.command('Standby Deactivate');
+      xapi.config.set("Standby Signage Url", "");
+    }
     xapi.command(' Audio SoundsAndAlerts Ringtone Play', {
       RingTone: 'Ringer',
     });
@@ -65,7 +92,12 @@ xapi.status.on('RoomAnalytics PeopleCount Current', (numberofpeople) => {
     if(numberofpeople<=0){
       if(callEnded){
         console.log('TRIGGERED');
-        postStatusCall();
+        if(OPTION === 1){
+          displayLockScreen();
+        }
+        else {
+          postStatusCall();
+        }
         callEnded = false;
       }
     }
