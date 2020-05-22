@@ -25,7 +25,7 @@ So you could choose Alert or Page option:
 - **2**: is for the Alert option
 ```javascript
 const xapi = require('xapi');
-const OPTION = 2 <== CHANGE OPTION NUMBER HERE
+const OPTION = 2 // <== CHANGE OPTION NUMBER HERE
 ...
 ...
 var alertDuration = 2; //in minutes  <== CHANGE THE DURATION OF THE ALERT HERE 
