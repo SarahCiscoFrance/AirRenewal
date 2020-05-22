@@ -24,7 +24,7 @@ So you could choose Alert or Page option:
 - **1**: is for the Page option (for this option you can change the url of the web page if you want BUT a url is required)
 - **2**: is for the Alert option
 ```javascript
-const OPTION = 2 // <== CHANGE OPTION NUMBER HERE
+const OPTION = ... // <== CHANGE OPTION NUMBER HERE
 ```
 
 If you want to change the url
