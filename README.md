@@ -21,7 +21,10 @@ A counter page is displayed explaining what is happening and when we can enter i
 Test the web page here: https://websrv2.ciscofrance.com:15199/airRenewal/?dc=15 (where **dc** parameter is the alertDuration set in code).
 
 So you could choose Alert or Page option:
-- **1**: is for the Page option 
+- **1**: is for the Page option (for this option you can change the url of the web page if you want BUT a url is required)
+```javascript
+xapi.config.set("Standby Signage Url", "http://websrv2.ciscofrance.com:15198/airRenewal/?dc=" + alertDuration);
+```
 - **2**: is for the Alert option
 ```javascript
 const xapi = require('xapi');
