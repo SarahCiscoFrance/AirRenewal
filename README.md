@@ -18,7 +18,7 @@ The endpoint also blocks its use during 15 minutes.
 It's possible to display a web page instead of Alert in order to have the screen fully used.
 A counter page is displayed explaining what is happening and when we can enter in the room again.
 
-Test here: https://websrv2.ciscofrance.com:15199/airRenewal/?dc=15 (where dc parameter is the Remaining time).
+Test the web page here: https://websrv2.ciscofrance.com:15199/airRenewal/?dc=15 (where **dc** parameter is the Remaining time  sent by code).
 
 So we could choose Alert or Page option:
 - **1**: is for the Page option 
