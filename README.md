@@ -17,8 +17,20 @@ The endpoint also blocks its use during 15 minutes.
 
 It's possible to display a web page instead of Alert in order to have the screen fully used.
 A counter page is displayed explaining what is happening and when we can enter in the room again.
-So we could choose option Alert or Option page.
 
+Test the web page here: https://websrv2.ciscofrance.com:15199/airRenewal/?dc=15 (where **dc** parameter is the Remaining time  sent by code).
+
+So you could choose Alert or Page option:
+- **1**: is for the Page option 
+- **2**: is for the Alert option
+```javascript
+const xapi = require('xapi');
+const OPTION = 2 // <== CHANGE OPTION NUMBER HERE
+...
+...
+var alertDuration = 2; //in minutes  <== CHANGE THE DURATION OF THE ALERT HERE 
+```
+You can also set the duration of the alert.
 At the end of this period an alert sound is triggered and the Endpoint is usable again.
 
 
