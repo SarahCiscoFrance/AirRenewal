@@ -17,6 +17,8 @@ The endpoint also blocks its use during 15 minutes.
 
 It's possible to display a web page instead of Alert in order to have the screen fully used.
 A counter page is displayed explaining what is happening and when we can enter in the room again.
+![Image description](https://i.ibb.co/0Mfb3H8/Capture-d-e-cran-2020-05-22-a-18-10-52.png)
+
 So we could choose option Alert or Option page.
 
 At the end of this period an alert sound is triggered and the Endpoint is usable again.
