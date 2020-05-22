@@ -20,7 +20,7 @@ A counter page is displayed explaining what is happening and when we can enter i
 
 Test the web page here: https://websrv2.ciscofrance.com:15199/airRenewal/?dc=15 (where **dc** parameter is the Remaining time  sent by code).
 
-So we could choose Alert or Page option:
+So you could choose Alert or Page option:
 - **1**: is for the Page option 
 - **2**: is for the Alert option
 ```javascript
