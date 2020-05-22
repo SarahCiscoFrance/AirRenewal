@@ -15,6 +15,10 @@ When a call or a meeting ended and the user leaves the room, the endpoint automa
 The endpoint also blocks its use during 15 minutes.
 ![Image description](https://i.ibb.co/HYBPy9C/20200520-152047-007-01.jpg)
 
+It's possible to display a web page instead of Alert in order to have the screen fully used.
+A counter page is displayed explaining what is happening and when we can enter in the room again.
+So we could choose option Alert or Option page.
+
 At the end of this period an alert sound is triggered and the Endpoint is usable again.
 
 
