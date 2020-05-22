@@ -1,13 +1,14 @@
 /*
 Author: rudferna@cisco.com
-Version: v1.0
+Version: v1.2
 */
 
 const xapi = require('xapi');
-const OPTION = 2 // 1: DIGITAL SIGNAGE OR 2: ALERT MESSAGE
+const OPTION = 2 // 1: For DIGITAL SIGNAGE OR 2: For ALERT MESSAGE  <== CHANGE HERE OPTIONS
 xapi.config.set("RoomAnalytics PeopleCountOutOfCall", "On");
+xapi.config.set("WebEngine Mode", "On");
 xapi.config.set("Standby Signage Mode", "On");
-var alertDuration = 2; //in minutes
+var alertDuration = 2; //in minutes  <== CHANGE HERE THE DURATION OF THE ALERT
 var copyDuration = alertDuration;
 var refreshIntervalId;
 var callEnded = false;
@@ -79,7 +80,10 @@ function lockDevice(){
 function unlockDevice(){
   xapi.config.set('UserInterface Features HideAll', 'False');
 }
+/* END FUNCTION USED BY THE 2 OPTIONS*/
 
+
+/* EVENTS */
 xapi.event.on("CallDisconnect", (event) => {
         if (event.Duration > 0) {
           console.log('call ended');
