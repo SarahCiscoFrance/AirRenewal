@@ -22,18 +22,20 @@ Test the web page here: https://websrv2.ciscofrance.com:15199/airRenewal/?dc=15 
 
 So you could choose Alert or Page option:
 - **1**: is for the Page option (for this option you can change the url of the web page if you want BUT a url is required)
-```javascript
-xapi.config.set("Standby Signage Url", "http://websrv2.ciscofrance.com:15198/airRenewal/?dc=" + alertDuration);
-```
 - **2**: is for the Alert option
 ```javascript
-const xapi = require('xapi');
 const OPTION = 2 // <== CHANGE OPTION NUMBER HERE
-...
-...
+```
+
+If you want to change the url
+```javascript
+xapi.config.set("Standby Signage Url", "TYPE_YOUR_URL_HERE");
+```
+
+You can also set the duration of the alert.
+```javascript
 var alertDuration = 2; //in minutes  <== CHANGE THE DURATION OF THE ALERT HERE 
 ```
-You can also set the duration of the alert.
 At the end of this period an alert sound is triggered and the Endpoint is usable again.
 
 
