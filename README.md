@@ -34,7 +34,7 @@ xapi.config.set("Standby Signage Url", "TYPE_YOUR_URL_HERE");
 
 You can also set the duration of the alert.
 ```javascript
-var alertDuration = 2; //in minutes  <== CHANGE THE DURATION OF THE ALERT HERE 
+var alertDuration = ... ; //in minutes  <== CHANGE THE DURATION OF THE ALERT HERE 
 ```
 At the end of this period an alert sound is triggered and the Endpoint is usable again.
 
